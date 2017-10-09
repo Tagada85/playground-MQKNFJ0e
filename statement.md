@@ -177,9 +177,9 @@ const withPromises = () => {
   return firstPromise()
     .then( firstValue => {
       return secondPromise( firstValue )
-    })
-    .then( secondValue => {
-      return thirdPromise( firstValue, secondValue )
+      .then( secondValue => {
+        return thirdPromise( firstValue, secondValue )
+      })
     })
     .then( result => console.log( result ) )
     .catch( err => console.log(err))
@@ -204,7 +204,12 @@ withPromiseAll()
 
 Let's look at how much better it is with async/await:
 
-```javascript
+```javascript runnable
+const firstPromise = () => Promise.resolve( 43 )
+const secondPromise = value => Promise.resolve( value + 100 ) 
+const thirdPromise = ( value1, value2 ) => Promise.resolve( value1 + value2 + 100 ) 
+
+
 const withAsyncAwait = async () => {
   const firstValue = await firstPromise()
   const secondValue = await secondPromise()
