@@ -50,7 +50,7 @@ const writeAndRead = async () => {
 }
 
 writeAndRead()
-  .then(content => console.log(content)) // Hello World
+  .then(content => console.log(content)) 
 ```
 
 Ok, what is happening here?
@@ -134,13 +134,15 @@ stackingAllTheWayToTheSky()
     console.log(err) // FEEL THE PAIN!
   })
 
-  //Error: I can see my house from here!!
-  //  at stackingAllTheWayToTheSky.then.then.then.then.then.then (index.js:50:11)
 ```
 
 Now with async/await:
 
-```javascript
+```javascript runnable
+const usefulPromise = () => {
+    return new Promise( ( resolve, reject ) => { resolve() })
+}
+
 const debuggingMadeFun = async () => {
   await usefulPromise()
   await usefulPromise()
@@ -157,8 +159,6 @@ debuggingMadeFun()
   .catch(err => {
     console.log(err)
   })
-  //Error: I will not stack
-  // at debuggingMadeFun (index.js:47:9)
 
 ```
 
@@ -169,6 +169,10 @@ Ain't that much much more cleaner and easy to read?
 You probably wrote some code where you executed one operation and used that to execute a second one. Finally, you need those two values for the third and final operation. So, you may write something like that:
 
 ```javascript
+const firstPromise = () => 43
+const secondPromise = value => value + 100
+const thirdPromise = ( value1, value2 ) => value1 + value2 + 100
+
 const withPromises = () => {
   return firstPromise()
     .then( firstValue => {
@@ -189,6 +193,9 @@ const withPromiseAll = () => {
       return thirdPromise(firstValue, secondValue)
     })
 }
+
+console.log( withPromises() )
+console.log( withPromiseAll() )
 ```
 
 Let's look at how much better it is with async/await:
