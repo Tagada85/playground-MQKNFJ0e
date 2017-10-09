@@ -170,12 +170,8 @@ You probably wrote some code where you executed one operation and used that to e
 
 ```javascript runnable
 const firstPromise = () => Promise.resolve( 43 )
-const secondPromise = value => {
-    return new Promise( ( resolve, reject ) => resolve( value + 100 ) )
-}
-const thirdPromise = ( value1, value2 ) => {
-    return new Promise( ( resolve, reject ) => resolve( value1 + value2 + 100 ) )
-}
+const secondPromise = value => Promise.resolve( value + 100 ) 
+const thirdPromise = ( value1, value2 ) => Promise.resolve( value1 + value2 + 100 ) 
 
 const withPromises = () => {
   return firstPromise()
