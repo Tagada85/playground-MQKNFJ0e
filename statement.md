@@ -213,8 +213,11 @@ const thirdPromise = ( value1, value2 ) => Promise.resolve( value1 + value2 + 10
 const withAsyncAwait = async () => {
   const firstValue = await firstPromise()
   const secondValue = await secondPromise()
-  return thirdPromise( firstValue, secondValue )
+  const lastValue = thirdPromise( firstValue, secondValue )
+  console.log( lastValue )
 }
+
+withAsyncAwait()
 ```
 
 Do I need to say more?
