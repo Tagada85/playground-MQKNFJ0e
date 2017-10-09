@@ -109,6 +109,11 @@ Clean, concise and clean, while being concise. Good old try/catch can handle all
 As developers, if there is one thing we love, it is an infinite amount of functions in an error stack. It is probably not a huge deal, but more like a nice thing to know when you work with async/await. Check it out:
 
 ```javascript
+
+const usefulPromise = () => {
+    return new Promise( ( resolve, reject ) => { resolve() })
+}
+
 const stackingAllTheWayToTheSky = () => {
   return usefulPromise()
     .then(() => usefulPromise())
