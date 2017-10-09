@@ -187,6 +187,7 @@ const withPromises = () => {
     .then( secondValue => {
       return thirdPromise( firstValue, secondValue )
     })
+    .then( result => console.log( result ) )
 }
 // Or using Promise.all. It's a bit ugly, but the job is done
 
@@ -198,10 +199,11 @@ const withPromiseAll = () => {
     .then(([firstValue, secondValue]) => {
       return thirdPromise(firstValue, secondValue)
     })
+    .then( result => console.log( result ) )
 }
 
-console.log( withPromises() )
-console.log( withPromiseAll() )
+withPromises()
+withPromiseAll()
 ```
 
 Let's look at how much better it is with async/await:
