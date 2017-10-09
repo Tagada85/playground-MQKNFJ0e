@@ -168,7 +168,7 @@ Ain't that much much more cleaner and easy to read?
 
 You probably wrote some code where you executed one operation and used that to execute a second one. Finally, you need those two values for the third and final operation. So, you may write something like that:
 
-```javascript
+```javascript runnable
 const firstPromise = () => 43
 const secondPromise = value => value + 100
 const thirdPromise = ( value1, value2 ) => value1 + value2 + 100
