@@ -182,6 +182,7 @@ const withPromises = () => {
       return thirdPromise( firstValue, secondValue )
     })
     .then( result => console.log( result ) )
+    .catch( err => console.log(err))
 }
 // Or using Promise.all. It's a bit ugly, but the job is done
 
@@ -194,6 +195,7 @@ const withPromiseAll = () => {
       return thirdPromise(firstValue, secondValue)
     })
     .then( result => console.log( result ) )
+    .catch( err => console.log(err))
 }
 
 withPromises()
