@@ -169,9 +169,7 @@ Ain't that much much more cleaner and easy to read?
 You probably wrote some code where you executed one operation and used that to execute a second one. Finally, you need those two values for the third and final operation. So, you may write something like that:
 
 ```javascript runnable
-const firstPromise = () => {
-    return new Promise( ( resolve, reject ) => resolve(43) )
-}
+const firstPromise = () => Promise.resolve( 43 )
 const secondPromise = value => {
     return new Promise( ( resolve, reject ) => resolve( value + 100 ) )
 }
