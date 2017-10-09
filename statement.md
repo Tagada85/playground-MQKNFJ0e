@@ -1,6 +1,6 @@
 ## Introduction
 
-I wrote about <a href='https://dev.to/damcosset/i-promise-i-wont-callback-anymore-cp3' target='_blank'>promises</a> and <a href='https://dev.to/damcosset/introduction-to-generators-in-es6-5h1' target='_blank'>generators</a> being introduced in ES6. Another way to make asynchronous code look synchronous almost made it in ES6, but not quite: **async/await**. This functionality is built on top of promises. Let's take a look at it.
+I wrote about <a href='https://www.damiencosset.com/promise-wont-callback-anymore/ ' target='_blank'>promises</a> and <a href=' https://www.damiencosset.com/generators/' target='_blank'>generators</a> being introduced in ES6. Another way to make asynchronous code look synchronous almost made it in ES6, but not quite: **async/await**. This functionality is built on top of promises. Let's take a look at it.
 
 ## Syntax
 
